@@ -36,6 +36,9 @@ public class BookRepository {
         if(StringUtils.isNotBlank(request.getAuthor())){
             spec.add(new SearchStatement(Consts.AUTHOR, request.getAuthor(), SearchOperation.MATCH));
         }
+        if(StringUtils.isNotBlank(request.getIsbn())){
+            spec.add(new SearchStatement(Consts.ISBN, request.getIsbn(), SearchOperation.MATCH));
+        }
         if(StringUtils.isNotBlank(request.getCategory())){
             spec.add(new SearchStatement(Consts.CATEGORY, request.getCategory(), SearchOperation.EQUAL));
         }
